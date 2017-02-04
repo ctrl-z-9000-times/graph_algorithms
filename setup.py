@@ -1,33 +1,28 @@
 #!/usr/bin/python3
-from setuptools import setup, find_packages
+from setuptools import setup
 
-short_description = 'Common Graph Algorithms Library'
+import graph_algorithms
 
-long_description = short_description +  '''
--------------------------------------
+with open('graph_algorithms/LICENSE') as f:
+    license = f.read()
 
-This is a library of common graph algorithms with a functional API so that it 
-can directly work with arbitrary python data structures.
-
-Currently Implemented:
-- depth_first_traversal()       A lazy depth first traversal
-- depth_first_search()          A depth first search
-'''
+with open('README.txt') as f:
+    readme = f.read()
 
 setup(
-    name = 'common_algorithms',
-    version = "0.0.0",
+    name = graph_algorithms.__name__,
+    version = graph_algorithms.__version__,
 
-    author = "David McDougall",
-    author_email = "dam1784[at]rit[dot]edu",
-    url = 'no-website',
+    author = graph_algorithms.__author__,
+    author_email = "dam1784[at]rit.edu",
+    url = 'https://pypi.python.org/pypi/common_algorithms',
 
-    license = 'MIT',
+    license = license,
 
-    description = short_description,
-    long_description = long_description,
+    description = graph_algorithms.__doc__.split('\n')[0],
+    long_description = readme,
 
-    keywords = 'developement',
+    keywords = ['development', 'graph'],
 
     classifiers = [
         "Development Status :: 3 - Alpha",
@@ -39,8 +34,18 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Topic :: Utilities",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.5",
     ],
 
-    packages = find_packages(),
+    packages = ['graph_algorithms'],
+    package_data = {
+        '': '*LICENSE',
+    },
+
+    test_suite = "graph_algorithms.tests",
+
+    extras_require = {
+        'debug': ['numpy'],
+        'test': ['numpy'],
+    },
 )

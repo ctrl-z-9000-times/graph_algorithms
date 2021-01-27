@@ -24,7 +24,7 @@ Focus on asyptotic time complexity and simplifying things for the user.
 
 
 
-__version__ = "0.1"     # Simple "major.minor" versioning
+__version__ = "0.1.1"
 __author__ = "David McDougall <dam1784[at]rit.edu>"
 __license__ = "MIT"
 __all__ = [

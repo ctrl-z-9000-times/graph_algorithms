@@ -14,7 +14,7 @@ setup(
     version = graph_algorithms.__version__,
 
     author = graph_algorithms.__author__,
-    author_email = "dam1784[at]rit.edu",
+    author_email = "dam1784@rit.edu",
     url = 'https://pypi.python.org/pypi/common_algorithms',
 
     license = license,
@@ -39,7 +39,7 @@ setup(
 
     packages = ['graph_algorithms'],
     package_data = {
-        '': '*LICENSE',
+        '': ['*/LICENSE'],
     },
 
     test_suite = "graph_algorithms.tests",
